@@ -91,3 +91,155 @@ head(conteo_sector_escuelas_sin_extranjeros)
 head(cantidad_escuelas_por_sector_y_provincia)
 head(cantidad_escuelas_por_sector_y_provincia_extranjeros)
 head(cantidad_escuelas_por_sector_y_provincia_sin_extranjeros)
+
+# --------------GRÁFICOS------------
+
+# Definir colores para los sectores
+colors <- c('#ff7555', '#41e1d1')
+
+# ---------------------------------------------------------
+# Nota: Actualizar los títulos de acuerdo al año
+# ---------------------------------------------------------
+
+# ------------------ TOTAL -----------------
+
+porcentajes <- conteo_sector_escuelas_total$porcentaje_escuelas_por_sector
+sectores <- conteo_sector_escuelas_total$sector
+
+# Crear gráfico de torta con los porcentajes
+pie(porcentajes, labels = paste0(round(porcentajes, 2), "%"), col = colors, main = "Distribución Total de Escuelas Privadas \n y Estatales en Argentina (2021)", border = colors)
+
+# Agregar la leyenda
+legend("bottomright", legend = sectores, fill = colors, cex = 0.8)
+
+# Guardar el gráfico como imagen
+png("grafico_torta_escuelas_sector_2021.png", width = 500, height = 500)
+pie(porcentajes, labels = paste0(round(porcentajes, 2), "%"), col = colors, main = "Distribución Total de Escuelas Privadas \n y Estatales en Argentina (2021)", border = colors)
+legend("bottomright", legend = sectores, fill = colors, cex = 0.8)
+dev.off()  # Cerrar el dispositivo gráfico para guardar la imagen
+
+# ------------------ Provincial -----------------
+
+df <- data.frame(
+  provincia = cantidad_escuelas_por_sector_y_provincia$provincia,
+  sector = cantidad_escuelas_por_sector_y_provincia$sector,
+  cantidad_escuelas = cantidad_escuelas_por_sector_y_provincia$cantidad_escuelas_por_sector_y_provincia,  # Accediendo directamente desde el CSV
+  porcentaje = cantidad_escuelas_por_sector_y_provincia$porcentaje_escuelas_por_sector_y_provincia
+)
+
+# Asegurarse de que el sector estatal aparezca primero
+df$sector <- factor(df$sector, levels = c("Privado", "Estatal"))
+
+# Crear el gráfico de barras apiladas en orientación horizontal
+ggplot(df, aes(fill = sector, x = provincia, y = porcentaje)) +
+  geom_bar(position = 'stack', stat = 'identity') +  # Mantener 'stack' para apilar
+  geom_text(aes(label = round(porcentaje, 2)),  # Redondear el porcentaje a 1 decimal
+            position = position_stack(vjust = 0.5),  # Ajustar el texto en el centro
+            color = "white",  # Color del texto
+            size = 4) +  # Ajustar tamaño de texto
+  theme_minimal() +
+  labs(x = 'Provincia', y = 'Porcentaje de Escuelas', title = 'Porcentaje del Total de Escuelas \n por Provincia y Sector (2021)') +
+  theme(plot.title = element_text(hjust = 0.5, size = 16, face = 'bold'),
+        legend.title = element_blank(),  # Eliminar el título de la leyenda
+        legend.background = element_rect(size = 0.2)) +  # Fondo gris para la leyenda
+  scale_fill_manual('Sector', values = c('#41e1d1', '#ff7555')) +
+  coord_flip()  # Voltear el gráfico para que sea horizontal (Estatal a la izquierda)
+
+# Guardar el gráfico con ggsave
+ggsave("porcentaje_de_escuelas_por_provincia_sector_2021.png", width = 8, height = 8, dpi = 300, bg = "white")
+
+# ------------------ EXTRANJEROS -----------------
+
+# Extraer los porcentajes y sectores
+porcentajes <- conteo_sector_escuelas_extranjeros$porcentaje_escuelas_por_sector
+sectores <- conteo_sector_escuelas_extranjeros$sector
+
+# Crear gráfico de torta con los porcentajes
+pie(porcentajes, labels = paste0(round(porcentajes, 2), "%"), col = colors, main = "Distribución de Escuelas con Extranjeros \n según Gestión Privada y Estatal en Argentina (2021)", border = colors)
+
+# Agregar la leyenda
+legend("bottomright", legend = sectores, fill = colors, cex = 0.8)
+
+# Guardar el gráfico como imagen
+png("grafico_torta_escuelas_sector_extranjeros_2021.png", width = 500, height = 500)
+pie(porcentajes, labels = paste0(round(porcentajes, 2), "%"), col = colors, main = "Distribución de Escuelas con Extranjeros \n según Gestión Privada y Estatal en Argentina (2021)", border = colors)
+legend("bottomright", legend = sectores, fill = colors, cex = 0.8)
+dev.off()  # Cerrar el dispositivo gráfico para guardar la imagen
+
+# ------------------ Provincial -----------------
+
+df <- data.frame(
+  provincia = cantidad_escuelas_por_sector_y_provincia_extranjeros$provincia,
+  sector = cantidad_escuelas_por_sector_y_provincia_extranjeros$sector,
+  cantidad_escuelas = cantidad_escuelas_por_sector_y_provincia_extranjeros$cantidad_escuelas_por_sector_y_provincia,
+  porcentaje = cantidad_escuelas_por_sector_y_provincia_extranjeros$porcentaje_escuelas_por_sector_y_provincia_extranjeros
+)
+
+# Asegurarse de que el sector estatal aparezca primero
+df$sector <- factor(df$sector, levels = c("Privado", "Estatal"))
+
+# Crear el gráfico de barras apiladas en orientación horizontal
+ggplot(df, aes(fill = sector, x = provincia, y = porcentaje)) +
+  geom_bar(position = 'stack', stat = 'identity') +  # Mantener 'stack' para apilar
+  geom_text(aes(label = round(porcentaje, 2)),  # Redondear el porcentaje a 1 decimal
+            position = position_stack(vjust = 0.4),  # Centrar el texto en el medio de cada segmento
+            color = "white",  # Color del texto
+            size = 4) +  # Ajustar tamaño de texto
+  theme_minimal() +
+  labs(x = 'Provincia', y = 'Porcentaje de Escuelas con Extranjeros', title = 'Porcentaje de Escuelas con Extranjeros \n por Provincia y Sector (2021)') +
+  theme(plot.title = element_text(hjust = 0.5, size = 16, face = 'bold'),
+        legend.title = element_blank(),  # Eliminar el título de la leyenda
+        legend.background = element_rect(size = 0.2)) +  # Fondo gris para la leyenda
+  scale_fill_manual('Sector', values = c('#41e1d1', '#ff7555')) +
+  coord_flip()  # Voltear el gráfico para que sea horizontal
+
+# Guardar el gráfico con ggsave
+ggsave("porcentaje_de_escuelas_por_provincia_sector_extranjeros_2021.png", width = 8, height = 8, dpi = 300, bg = "white")
+
+# ------------------ SIN EXTRANJEROS -----------------
+
+# Extraer los porcentajes y sectores
+porcentajes <- conteo_sector_escuelas_sin_extranjeros$porcentaje_escuelas_por_sector
+sectores <- conteo_sector_escuelas_sin_extranjeros$sector
+
+# Crear gráfico de torta con los porcentajes
+pie(porcentajes, labels = paste0(round(porcentajes, 2), "%"), col = colors, main = "Distribución de Escuelas sin Extranjeros \n según Gestión Privada y Estatal en Argentina (2021)", border = colors)
+
+# Agregar la leyenda
+legend("bottomright", legend = sectores, fill = colors, cex = 0.8)
+
+# Guardar el gráfico como imagen
+png("grafico_torta_escuelas_sector_sin_extranjeros_2021.png", width = 500, height = 500)
+pie(porcentajes, labels = paste0(round(porcentajes, 2), "%"), col = colors, main = "Distribución de Escuelas sin Extranjeros \n según Gestión Privada y Estatal en Argentina (2021)", border = colors)
+legend("bottomright", legend = sectores, fill = colors, cex = 0.8)
+dev.off()  # Cerrar el dispositivo gráfico para guardar la imagen
+
+# ------------------ Provincial -----------------
+
+df <- data.frame(
+  provincia = cantidad_escuelas_por_sector_y_provincia_sin_extranjeros$provincia,
+  sector = cantidad_escuelas_por_sector_y_provincia_sin_extranjeros$sector,
+  cantidad_escuelas = cantidad_escuelas_por_sector_y_provincia_sin_extranjeros$cantidad_escuelas_por_sector_y_provincia,
+  porcentaje = cantidad_escuelas_por_sector_y_provincia_sin_extranjeros$porcentaje_escuelas_por_sector_y_provincia_sin_extranjeros
+)
+
+# Asegurarse de que el sector estatal aparezca primero
+df$sector <- factor(df$sector, levels = c("Privado", "Estatal"))
+
+# Crear el gráfico de barras apiladas en orientación horizontal
+ggplot(df, aes(fill = sector, x = provincia, y = porcentaje)) +
+  geom_bar(position = 'stack', stat = 'identity') +  # Mantener 'stack' para apilar
+  geom_text(aes(label = round(porcentaje, 2)),  # Redondear el porcentaje a 1 decimal
+            position = position_stack(vjust = 0.5),  # Centrar el texto en el medio de cada segmento
+            color = "white",  # Color del texto
+            size = 4) +  # Ajustar tamaño de texto
+  theme_minimal() +
+  labs(x = 'Provincia', y = 'Porcentaje de Escuelas sin Extranjeros', title = 'Porcentaje de Escuelas sin Extranjeros \n por Provincia y Sector (2021)') +
+  theme(plot.title = element_text(hjust = 0.5, size = 16, face = 'bold'),
+        legend.title = element_blank(),  # Eliminar el título de la leyenda
+        legend.background = element_rect(size = 0.2)) +  # Fondo gris para la leyenda
+  scale_fill_manual('Sector', values =  c('#41e1d1', '#ff7555')) +
+  coord_flip()  # Voltear el gráfico para que sea horizontal
+
+# Guardar el gráfico con ggsave
+ggsave("porcentaje_de_escuelas_por_provincia_sector_sin_extranjeros_2021.png", width = 8, height = 8, dpi = 300, bg = "white")
