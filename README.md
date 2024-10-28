@@ -1,10 +1,14 @@
 # SocioHackaton
 
-## Integrantes del grupo
+**Integrantes del grupo**
 
 - 
 
 ## Descripción del proyecto
+
+## Diagramas de Flujo
+
+## Funciones y Técnicas Relevantes
 
 ## Instrucciones de Uso
 
