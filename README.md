@@ -1,7 +1,5 @@
 # SocioHackaton
 
-# Proyecto Escuelas e Inmigrantes
-
 ```plaintext
 /SocioHackaton
 │
