@@ -1,3 +1,10 @@
+##############################################################################
+# Código de sectores de escuelas primarias y secundarias en Argentina        #
+# Nota: Ejecutar `filtrado_escuelas_extranjeros.R` antes de este             #
+#       script para generar las tablas necesarias:                           #
+#       `poblacion`, `escuelas_con_extranjeros`, `escuelas_sin_extranjeros`. #
+##############################################################################
+
 # Cargar librerías necesarias
 library(ggplot2)
 library(dplyr)

@@ -1,3 +1,12 @@
+######################################################################
+# Análisis de acceso a biblioteca por escuelas primarias             #
+# y secundarias en Argentina                                         #
+# Nota: Ejecutar `cruce_poblacion_caracteristicas.R` antes de este   #
+#       script para preparar las tablas necesarias llamadas          #
+#       caracteristicas_extranjeros, caracteristicas_sin_extranjeros #
+#       y caracteristicas                                            #
+######################################################################
+
 # Cargar librerías necesarias
 library(ggplot2)
 library(dplyr)
