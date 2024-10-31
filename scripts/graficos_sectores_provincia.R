@@ -27,7 +27,7 @@ total_escuelas_por_provincia <- cantidad_escuelas_por_sector_y_provincia %>%
 cantidad_escuelas_por_sector_y_provincia <- cantidad_escuelas_por_sector_y_provincia %>%
   left_join(total_escuelas_por_provincia, by = "provincia") %>%
   mutate(porcentaje_escuelas_por_sector_y_provincia = round((cantidad_escuelas_por_sector_y_provincia / total_escuelas) * 100, 2)) %>%
-  select(-total_escuelas)
+  select(-total_escuelas) # Eliminar la columna para que no esté repetida
 
 # ================================================================
 # PROVINCIA: EXTRANJEROS
@@ -46,7 +46,7 @@ total_escuelas_por_provincia_extranjeros <- cantidad_escuelas_por_sector_y_provi
 cantidad_escuelas_por_sector_y_provincia_extranjeros <- cantidad_escuelas_por_sector_y_provincia_extranjeros %>%
   left_join(total_escuelas_por_provincia_extranjeros, by = "provincia") %>%
   mutate(porcentaje_escuelas_por_sector_y_provincia_extranjeros = round((cantidad_escuelas_por_sector_y_provincia / total_escuelas_extranjeros) * 100, 2)) %>%
-  select(-total_escuelas_extranjeros)
+  select(-total_escuelas_extranjeros) # Eliminar la columna para que no esté repetida
 
 # ================================================================
 # PROVINCIA: SIN EXTRANJEROS
@@ -65,7 +65,7 @@ total_escuelas_por_provincia_sin_extranjeros <- cantidad_escuelas_por_sector_y_p
 cantidad_escuelas_por_sector_y_provincia_sin_extranjeros <- cantidad_escuelas_por_sector_y_provincia_sin_extranjeros %>%
   left_join(total_escuelas_por_provincia_sin_extranjeros, by = "provincia") %>%
   mutate(porcentaje_escuelas_por_sector_y_provincia_sin_extranjeros = round((cantidad_escuelas_por_sector_y_provincia / total_escuelas_sin_extranjeros) * 100, 2)) %>%
-  select(-total_escuelas_sin_extranjeros)  # Eliminar la columna total si no es necesaria
+  select(-total_escuelas_sin_extranjeros)  # Eliminar la columna para que no esté repetida
 
 # Guardar los resultados provinciales en CSV
 write.csv(cantidad_escuelas_por_sector_y_provincia, "cantidad_escuelas_por_sector_y_provincia.csv", row.names = FALSE)

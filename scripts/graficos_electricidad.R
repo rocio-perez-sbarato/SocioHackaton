@@ -37,7 +37,7 @@ características_electricidad_nacional <- características %>%  # Cambiar a tu d
   summarise(
     cantidad_escuelas_con_electricidad_red_publica = sum(total_electricidad_red_publica > 0 & total_electricidad_otros == 0, na.rm = TRUE),
     cantidad_escuelas_con_electricidad_otros = sum(total_electricidad_otros > 0 & total_electricidad_red_publica == 0, na.rm = TRUE),
-    cantidad_escuelas_con_ambas = sum(total_electricidad_red_publica > 0 & total_electricidad_otros > 0, na.rm = TRUE),
+    cantidad_escuelas_con_ambas = sum(total_electricidad_red_publica > 0 & total_electricidad_otros > 0, na.rm = TRUE), # Nos dice los duplicados
     cantidad_escuelas_sin_electricidad = sum(total_electricidad_red_publica == 0 & total_electricidad_otros == 0, na.rm = TRUE),
     cantidad_escuelas_con_electricidad_sin_duplicados = sum(total_electricidad > 0, na.rm = TRUE) - cantidad_escuelas_con_ambas ,
     cantidad_escuelas_sin_duplicados = nrow(características) - cantidad_escuelas_con_ambas
@@ -69,7 +69,7 @@ características_electricidad_nacional_extranjeros <- características_extranjer
   summarise(
     cantidad_escuelas_con_electricidad_red_publica = sum(total_electricidad_red_publica > 0 & total_electricidad_otros == 0, na.rm = TRUE),
     cantidad_escuelas_con_electricidad_otros = sum(total_electricidad_otros > 0 & total_electricidad_red_publica == 0, na.rm = TRUE),
-    cantidad_escuelas_con_ambas = sum(total_electricidad_red_publica > 0 & total_electricidad_otros > 0, na.rm = TRUE),
+    cantidad_escuelas_con_ambas = sum(total_electricidad_red_publica > 0 & total_electricidad_otros > 0, na.rm = TRUE), # Nos dice los duplicados
     cantidad_escuelas_sin_electricidad = sum(total_electricidad_red_publica == 0 & total_electricidad_otros == 0, na.rm = TRUE),
     cantidad_escuelas_con_electricidad_sin_duplicados = sum(total_electricidad > 0, na.rm = TRUE) - cantidad_escuelas_con_ambas ,
     cantidad_escuelas_sin_duplicados = nrow(características_electricidad_extranjeros) - cantidad_escuelas_con_ambas
@@ -102,7 +102,7 @@ características_electricidad_nacional_sin_extranjeros <- características_sin_e
   summarise(
     cantidad_escuelas_con_electricidad_red_publica = sum(total_electricidad_red_publica > 0 & total_electricidad_otros == 0, na.rm = TRUE),
     cantidad_escuelas_con_electricidad_otros = sum(total_electricidad_otros > 0 & total_electricidad_red_publica == 0, na.rm = TRUE),
-    cantidad_escuelas_con_ambas = sum(total_electricidad_red_publica > 0 & total_electricidad_otros > 0, na.rm = TRUE),
+    cantidad_escuelas_con_ambas = sum(total_electricidad_red_publica > 0 & total_electricidad_otros > 0, na.rm = TRUE), # Nos dice los duplicados
     cantidad_escuelas_sin_electricidad = sum(total_electricidad_red_publica == 0 & total_electricidad_otros == 0, na.rm = TRUE),
     cantidad_escuelas_con_electricidad_sin_duplicados = sum(total_electricidad > 0, na.rm = TRUE) - cantidad_escuelas_con_ambas ,
     cantidad_escuelas_sin_duplicados = nrow(características_electricidad_sin_extranjeros) - cantidad_escuelas_con_ambas
@@ -129,3 +129,148 @@ write.csv(características_electricidad_nacional_sin_extranjeros, "característi
 write.csv(características_electricidad_nacional, "características_electricidad_nacional.csv", row.names = FALSE, fileEncoding = "UTF-8")
 write.csv(características_electricidad_nacional_extranjeros, "características_electricidad_nacional_extranjeros.csv", row.names = FALSE, fileEncoding = "UTF-8")
 
+# ================================================================
+# GRÁFICOS
+# ================================================================
+
+# ---------------------------------------------------------
+# Nota: Actualizar los títulos de acuerdo al año
+# ---------------------------------------------------------
+
+# Colores para el gráfico
+colors <- c("#CD3278", "#4682B4", "#3CB371") 
+
+# ================================ NACIONAL =================================
+
+# Datos de escuelas
+cantidad_escuelas_sin_electricidad_nacional <- características_electricidad_nacional$cantidad_escuelas_sin_electricidad
+cantidad_escuelas_con_electricidad_red_publica <- características_electricidad_nacional$cantidad_escuelas_con_electricidad_red_publica
+cantidad_escuelas_con_electricidad_otros <- características_electricidad_nacional$cantidad_escuelas_con_electricidad_otros
+total_escuelas_nacional <- características_electricidad_nacional$cantidad_escuelas_sin_duplicados
+
+# Cálculo de porcentajes con redondeo
+porcentaje_sin_electricidad_nacional <- round((cantidad_escuelas_sin_electricidad_nacional / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_red_publica <- round((cantidad_escuelas_con_electricidad_red_publica / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_otros <- round((cantidad_escuelas_con_electricidad_otros / total_escuelas_nacional) * 100, 2)
+
+# Crear dataframe
+conteo_electricidad_nacional <- data.frame(
+  electricidad_categoria = c("Otros Tipos de Electricidad", "Sin Electricidad", "Con Red Pública"),
+  cantidad = c(cantidad_escuelas_con_electricidad_otros,
+              cantidad_escuelas_sin_electricidad_nacional,
+               cantidad_escuelas_con_electricidad_red_publica),
+  porcentaje = c(porcentaje_con_electricidad_otros,
+                porcentaje_sin_electricidad_nacional,
+                porcentaje_con_electricidad_red_publica)
+)
+
+# Crear el gráfico de torta para acceso a Electricidad
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = paste0(round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+    col = colors,
+    main = "Distribución de Escuelas \n según Acceso a Electricidad en Argentina (2015)",
+    border = colors)
+
+# Agregar la leyenda
+legend("bottomright", legend = conteo_electricidad_nacional$electricidad_categoria, fill = colors, cex = 0.8)
+
+# Guardar el gráfico como imagen
+png("grafico_torta_acceso_electricidad_nacional_extranjeros_2015.png", width = 500, height = 500)
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = paste0(round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+    col = colors,
+    main = "Distribución de Escuelas \n según Acceso a Electricidad en Argentina (2015)",
+    border = colors)
+legend("bottomright", legend = conteo_electricidad_nacional$electricidad_categoria, fill = colors, cex = 0.8)
+dev.off()
+
+# ================================ EXTRANJEROS =================================
+
+# Datos de escuelas
+cantidad_escuelas_sin_electricidad_nacional <- características_electricidad_nacional_extranjeros$cantidad_escuelas_sin_electricidad
+cantidad_escuelas_con_electricidad_red_publica <- características_electricidad_nacional_extranjeros$cantidad_escuelas_con_electricidad_red_publica
+cantidad_escuelas_con_electricidad_otros <- características_electricidad_nacional_extranjeros$cantidad_escuelas_con_electricidad_otros
+total_escuelas_nacional <- características_electricidad_nacional_extranjeros$cantidad_escuelas_sin_duplicados
+
+# Cálculo de porcentajes con redondeo
+porcentaje_sin_electricidad_nacional <- round((cantidad_escuelas_sin_electricidad_nacional / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_red_publica <- round((cantidad_escuelas_con_electricidad_red_publica / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_otros <- round((cantidad_escuelas_con_electricidad_otros / total_escuelas_nacional) * 100, 2)
+
+# Crear dataframe
+conteo_electricidad_nacional <- data.frame(
+  electricidad_categoria = c("Otros Tipos de Electricidad", "Sin Electricidad", "Con Red Pública"),
+  cantidad = c(cantidad_escuelas_con_electricidad_otros,
+              cantidad_escuelas_sin_electricidad_nacional,
+               cantidad_escuelas_con_electricidad_red_publica),
+  porcentaje = c(porcentaje_con_electricidad_otros,
+                porcentaje_sin_electricidad_nacional,
+                porcentaje_con_electricidad_red_publica)
+)
+
+# Crear el gráfico de torta para acceso a Electricidad
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = paste0(round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+    col = colors,
+    main = "Distribución de Escuelas con Extranjeros \n según Acceso a Electricidad en Argentina (2015)",
+    border = colors)
+
+# Agregar la leyenda
+legend("bottomright", legend = conteo_electricidad_nacional$electricidad_categoria, fill = colors, cex = 0.8)
+
+# Guardar el gráfico como imagen
+png("grafico_torta_acceso_electricidad_nacional_extranjeros_2015.png", width = 500, height = 500)
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = paste0(round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+    col = colors,
+    main = "Distribución de Escuelas con Extranjeros \n según Acceso a Electricidad en Argentina (2015)",
+    border = colors)
+legend("bottomright", legend = conteo_electricidad_nacional$electricidad_categoria, fill = colors, cex = 0.8)
+dev.off()
+
+# ================================ SIN EXTRANJEROS =================================
+
+# Datos de escuelas
+cantidad_escuelas_sin_electricidad_nacional <- características_electricidad_nacional_sin_extranjeros$cantidad_escuelas_sin_electricidad
+cantidad_escuelas_con_electricidad_red_publica <- características_electricidad_nacional_sin_extranjeros$cantidad_escuelas_con_electricidad_red_publica
+cantidad_escuelas_con_electricidad_otros <- características_electricidad_nacional_sin_extranjeros$cantidad_escuelas_con_electricidad_otros
+total_escuelas_nacional <- características_electricidad_nacional_sin_extranjeros$cantidad_escuelas_sin_duplicados
+
+# Cálculo de porcentajes con redondeo
+porcentaje_sin_electricidad_nacional <- round((cantidad_escuelas_sin_electricidad_nacional / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_red_publica <- round((cantidad_escuelas_con_electricidad_red_publica / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_otros <- round((cantidad_escuelas_con_electricidad_otros / total_escuelas_nacional) * 100, 2)
+
+# Crear dataframe
+conteo_electricidad_nacional <- data.frame(
+  electricidad_categoria = c("Otros Tipos de Electricidad", "Sin Electricidad", "Con Red Pública"),
+  cantidad = c(cantidad_escuelas_con_electricidad_otros,
+              cantidad_escuelas_sin_electricidad_nacional,
+               cantidad_escuelas_con_electricidad_red_publica),
+  porcentaje = c(porcentaje_con_electricidad_otros,
+                porcentaje_sin_electricidad_nacional,
+                porcentaje_con_electricidad_red_publica)
+)
+
+# Colores para el gráfico
+colors <- c("#CD3278", "#4682B4", "#3CB371")  # Colores para el gráfico
+
+# Crear el gráfico de torta para acceso a Electricidad
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = paste0(round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+    col = colors,
+    main = "Distribución de Escuelas sin Extranjeros \n según Acceso a Electricidad en Argentina (2015)",
+    border = colors)
+
+# Agregar la leyenda
+legend("bottomright", legend = conteo_electricidad_nacional$electricidad_categoria, fill = colors, cex = 0.8)
+
+# Guardar el gráfico como imagen
+png("grafico_torta_acceso_electricidad_nacional_sin_extranjeros_2015.png", width = 500, height = 500)
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = paste0(round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+    col = colors,
+    main = "Distribución de Escuelas sin Extranjeros \n según Acceso a Electricidad en Argentina (2015)",
+    border = colors)
+legend("bottomright", legend = conteo_electricidad_nacional$electricidad_categoria, fill = colors, cex = 0.8)
+dev.off()

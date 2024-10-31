@@ -207,6 +207,5 @@ ggplot(df_biblioteca, aes(fill = sector, x = provincia, y = porcentaje)) +
   scale_fill_manual('Disponibilidad de Biblioteca', values = c( '#cd4d51','#91cd4d'))   +
   coord_flip()  # Voltear el gráfico para que sea horizontal
 
-
 # Guardar el gráfico con ggsave
 ggsave("porcentaje_de_escuelas_por_provincia_disponibilidad_biblioteca_sin_extranjeros.png", width = 8, height = 8, dpi = 300)

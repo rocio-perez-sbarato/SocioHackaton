@@ -7,7 +7,6 @@
 #       y caracteristicas                                            #
 ######################################################################
 
-
 # Cargar librerías necesarias
 library(ggplot2)
 library(dplyr)
@@ -141,7 +140,7 @@ pie(conteo_biblioteca$porcentaje,
 legend("bottomleft", legend = conteo_biblioteca$biblioteca_categoria, fill = colors, cex = 0.8)
 
 # Guardar el gráfico como imagen
-png("grafico_torta_disponibilidad_biblioteca_2012.png", width = 500, height = 500)
+png("grafico_torta_disponibilidad_biblioteca.png", width = 500, height = 500)
 pie(conteo_biblioteca_extranjeros$porcentaje,
     labels = paste0(round(conteo_biblioteca$porcentaje, 2), "%"),
     col = colors,
@@ -219,7 +218,7 @@ pie(conteo_biblioteca_sin_extranjeros$porcentaje,
 legend("bottomleft", legend = conteo_biblioteca_sin_extranjeros$biblioteca_categoria, fill = colors, cex = 0.8)
 
 # Guardar el gráfico como imagen
-png("grafico_torta_disponibilidad_biblioteca_sin_extranjeros_2023.png", width = 500, height = 500)
+png("grafico_torta_disponibilidad_biblioteca_sin_extranjeros.png", width = 500, height = 500)
 pie(conteo_biblioteca_sin_extranjeros$porcentaje,
     labels = paste0(round(conteo_biblioteca_sin_extranjeros$porcentaje, 2), "%"),
     col = colors,
