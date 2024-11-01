@@ -98,11 +98,11 @@ En este proyecto, usamos el lenguaje R, que es muy común para el análisis de d
   library(writexlsx) # Para guardar resultados en Excel
   ```
 - **Gráficos:**
-- **`pie()`**: para hacer gráficos de torta.
-- **`ggplot()`**: lo usamos para crear gráficos de barras.
+  - **`pie()`**: para hacer gráficos de torta.
+  - **`ggplot()`**: lo usamos para crear gráficos de barras.
 - **Procesar datos:**
-- **`read.csv()`** y **`write.csv()`**: para leer y escribir archivos CSV.
-- **`write_xlsx()`**: para guardar nuestros resultados en formato Excel.
+  - **`read.csv()`** y **`write.csv()`**: para leer y escribir archivos CSV.
+  - **`write_xlsx()`**: para guardar nuestros resultados en formato Excel.
 - **Operaciones de tablas:** 
   - **`select()`**: para elegir columnas específicas.
   - **`filter()`**: para filtrar filas según ciertas condiciones.
@@ -116,3 +116,13 @@ Recomendamos echarle un vistazo a estas páginas para aprender más sobre estas 
 - [Gráfico de barras agrupadas en R](https://www.statology.org/grouped-barplot-in-r/)
 - [Introducción a dplyr](https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/dplyr.html)
 - [Uniones de datos con dplyr](https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti)
+
+## Posibles Mejoras a Futuro
+
+Si tuvieramos más tiempo y más personas en el equipo, sería interesante realizar los siguientes ajustes:
+
+- **Gráficos**
+  - Cantidad de escuelas extranjeras en ámbitos urbanos y rurales
+  - Cantidad de escuelas extranjeras con acceso a laboratorio
+  - Análisis de tendencias año a año para el acceso a derechos y recursos de las escuelas con extranjeros
+- **Unificación de código:** Incorporar un ciclo por años en cada archivo para simplificar el código y hacerlo más eficiente. 
