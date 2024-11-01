@@ -18,7 +18,9 @@ Para llevar a cabo este análisis, usamos datos abiertos proporcionados por la D
 - **Base Usuaria 5**: características de los establecimientos educativos.
 - **Base Usuaria 6**: población escolar.
 
-### Análisis Realizados
+En este [documento](https://shimmering-aphid-642.notion.site/Bases-de-datos-11123fc8fd2180e2b5d0fa34473f7067?pvs=4) se encuentra una descripción de los contenidos de estas bases de datos y se señala cuáles utilizamos para el proyecto. 
+
+### Análisis realizados
 
 A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realizar los siguientes análisis:
 
@@ -33,13 +35,14 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 - **Acceso a electricidad:** Analizamos cuántas tienen electricidad y si es de la red pública u otra fuente.
 - **Acceso a biblioteca:** Contamos cuántas escuelas extranjeras cuentan con una biblioteca.
 
+> Son alrededor de 300 gráficos.
+
 ## Estructura del repositorio
 
 ```plaintext
 /SocioHackaton
 │
-├── README.md                        # Descripción del proyecto, objetivos, instrucciones de uso
-├── requirements.txt                 # Librerías necesarias 
+├── README.md                        # Descripción del proyecto e instrucciones de uso
 ├── data/                            # Carpeta para datos crudos y procesados, organizada por años
 │   ├── 2011/
 │   │   ├── Poblacion.csv       # Base de datos de población (2011)
@@ -58,8 +61,7 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 │   ├── ...
 │
 └── docs/                            # Documentación adicional
-    ├── informe.pdf                  # Informe 
-    └── instrucciones.md             # Instrucciones detalladas para ejecutar los scripts
+    ├── trabajo_final.pdf            # Trabajo
 
 ```
 
@@ -84,9 +86,9 @@ cd SocioHackaton
    - Te recomendamos usar los Colabs que están en la carpeta de notebooks, donde el flujo del código está armado de forma secuencial.
 
 **Documentación**
-   - **No te olvides** de leer el archivo `instrucciones.md` antes de ejecutar el código. Ahí vas a encontrar información importante sobre los encodings de cada base de datos y otros detalles a tener en cuenta.
-
-## Funciones y Técnicas Relevantes
+   - En la carpeta de `docs`, se encuentra el trabajo entregado en el SocioHackaton.
+  
+## Funciones y técnicas relevantes
 
 En este proyecto, usamos el lenguaje R, que es muy común para el análisis de datos. Nos familiarizarnos con este y decidimos utilizar las siguientes librerías y funciones para crear nuestros gráficos:
 
@@ -117,7 +119,7 @@ Recomendamos echarle un vistazo a estas páginas para aprender más sobre estas 
 - [Introducción a dplyr](https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/dplyr.html)
 - [Uniones de datos con dplyr](https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti)
 
-## Posibles Mejoras a Futuro
+## Trabajo futuro
 
 Si tuvieramos más tiempo y más personas en el equipo, sería interesante realizar los siguientes ajustes:
 
@@ -126,3 +128,4 @@ Si tuvieramos más tiempo y más personas en el equipo, sería interesante reali
   - Cantidad de escuelas extranjeras con acceso a laboratorio
   - Análisis de tendencias año a año para el acceso a derechos y recursos de las escuelas con extranjeros
 - **Unificación de código:** Incorporar un ciclo por años en cada archivo para simplificar el código y hacerlo más eficiente. 
+- **Unificación de entornos de trabajo:** Incorporar un Jupyter Notebook para cada análisis, logrando mayor accesibilidad en el código para personas interesadas pero sin formación técnica.
