@@ -25,10 +25,12 @@ En este [documento](https://shimmering-aphid-642.notion.site/Bases-de-datos-1112
 A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realizar los siguientes análisis:
 
 #### Población
-- **Cantidad de extranjeros por provincia:** Vimos cuántos estudiantes extranjeros hay en cada provincia.
+- **Cantidad de extranjeros por provincia:** Vimos cuántos estudiantes extranjeros hay en cada provincia y específicamente qué nacionalidades de origen tienen.
 - **Cantidad de extranjeros por nacionalidad:** Analizamos cuántos estudiantes hay según su país de origen.
 - **Cantidad de escuelas con estudiantes extranjeros:** Contamos cuántas escuelas tienen estudiantes que vienen de otros países.
-- **Cantidad de escuelas extranjeras según sector:** Revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
+- **Cantidad de escuelas con estudiantes extranjeros según sector:** Revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
+- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas con estudiantes extranjeros proveen servicio de alimentación.
+- **Tipos de alimentos brindados en escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos qué comidas (desayuno, almuerzo, merienda) se ofrecen en las escuelas con estudiantes extranjeros.
 
 #### Características
 - **Acceso a internet:** Miramos cuántas escuelas extranjeras tienen acceso a internet y si es pago o gratuito.
