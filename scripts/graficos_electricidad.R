@@ -252,9 +252,6 @@ conteo_electricidad_nacional <- data.frame(
                 porcentaje_con_electricidad_red_publica)
 )
 
-# Colores para el gráfico
-colors <- c("#CD3278", "#4682B4", "#3CB371")  # Colores para el gráfico
-
 # Crear el gráfico de torta para acceso a Electricidad
 pie(conteo_electricidad_nacional$porcentaje,
     labels = paste0(round(conteo_electricidad_nacional$porcentaje, 2), "%"),
