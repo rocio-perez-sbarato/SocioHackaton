@@ -1,5 +1,5 @@
 # La permanencia de la desigualdad. Del derecho al hecho.
-## Condiciones estructurales de los establecimientos educativos de niños/as y adolescentes migrantes 
+#### Condiciones estructurales de los establecimientos educativos de niños/as y adolescentes migrantes 
 
 **Integrantes**
 
