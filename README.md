@@ -5,9 +5,9 @@
 
 - Benitez Siciliano Paola. Estudiante de la Licenciatura en Sociología, Facultad de Ciencias Sociales.
 - Castillo Paulina, Estudiante de la Licenciatura en Ciencia Política, Facultad de Ciencias Sociales.
-- Carrara María Ángeles. Estudiante de la Licenciatura en Computación, Facultad de Matemática, Astronomía, Física y Computación.
+- Carrara María Ángeles. Estudiante de la Licenciatura en Ciencias de la Computación, Facultad de Matemática, Astronomía, Física y Computación.
 - Giletta Antonella Giuliana. Estudiante de la Licenciatura en Sociología, Facultad de Ciencias Sociales.
-- Perez Sbarato Rocío. Estudiante de la Licenciatura en Computación, Facultad de Matemática, Astronomía, Física y Computación.
+- Perez Sbarato Rocío. Estudiante de la Licenciatura en Ciencias de la Computación, Facultad de Matemática, Astronomía, Física y Computación.
 
 ## Descripción del proyecto
 
@@ -35,7 +35,7 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 - **Acceso a electricidad:** Analizamos cuántas tienen electricidad y si es de la red pública u otra fuente.
 - **Acceso a biblioteca:** Contamos cuántas escuelas extranjeras cuentan con una biblioteca.
 
-> Son alrededor de 300 gráficos.
+> Son alrededor de 600 gráficos.
 
 ## Estructura del repositorio
 
@@ -43,17 +43,18 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 /SocioHackaton
 │
 ├── README.md                        # Descripción del proyecto e instrucciones de uso
-├── data/                            # Carpeta para datos crudos y procesados, organizada por años
+├── bd/                              # Datos crudos organizados por años
+├── data/                            # Datos procesados organizados por años
 │   ├── 2011/
 │   │   ├── Poblacion.csv       # Base de datos de población (2011)
-│   │   ├── Caracteristicas.csv # Base de datos de características de las escuelas (2011)
+│   │   ├── Caracteristicas.csv # Base de datos de características (2011)
 │   │   └── ...                      # Otras bases de datos relevantes de 2011
 │   ├── ...                          # Repetir para años 2012 a 2023
 │
 ├── scripts/                         # Scripts de generación de gráficos y análisis
 │   ├── ...
 │
-├── notebooks/                       # Notebooks/Colabs interactivos con el mismo código que los scripts
+├── notebooks/                       # Notebooks/Colabs con el mismo código que los scripts
 │   ├── graficos_sector.ipynb
 │   ├── graficos_caracteristicas.ipynb
 │
@@ -82,11 +83,11 @@ cd SocioHackaton
 ```
 
 **Ejecutar los Scripts**
-   - Cada archivo se corre por separado y genera las tablas y gráficos. Si necesitás ejecutar un archivo que depende de otro, eso estará indicado al principio del archivo y también en `instrucciones.md`. 
-   - Te recomendamos usar los Colabs que están en la carpeta de notebooks, donde el flujo del código está armado de forma secuencial.
+   - Cada archivo se corre por separado y genera las tablas y gráficos. Si necesitás ejecutar un archivo que depende de otro, eso estará indicado al principio del archivo. 
+   - Recomendamos usar los Colabs que están en la carpeta de notebooks, donde el flujo del código está armado de forma secuencial.
 
 **Documentación**
-   - En la carpeta de `docs`, se encuentra el trabajo entregado en el SocioHackaton.
+   - En la carpeta de `docs` se encuentra el trabajo entregado en el SocioHackaton.
   
 ## Funciones y técnicas relevantes
 
@@ -129,3 +130,4 @@ Si tuvieramos más tiempo y más personas en el equipo, sería interesante reali
   - Análisis de tendencias año a año para el acceso a derechos y recursos de las escuelas con extranjeros
 - **Unificación de código:** Incorporar un ciclo por años en cada archivo para simplificar el código y hacerlo más eficiente. 
 - **Unificación de entornos de trabajo:** Incorporar un Jupyter Notebook para cada análisis, logrando mayor accesibilidad en el código para personas interesadas pero sin formación técnica.
+- **Unificación de orden de barras:** Definir el criterio óptimo para ordenar las barras de los gráficos de barras e incorporar este criterio en los gráficos ya realizados.
