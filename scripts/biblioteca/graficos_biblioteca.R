@@ -16,18 +16,22 @@ library(tidyr)
 # TOTAL
 # ================================================================
 
-# Definir las columnas que contienen información sobre biblioteca y laboratorio
-columnas_biblioteca_laboratorio <- c(
+# Definir las columnas que contienen información sobre biblioteca 
+columnas_biblioteca <- c(
   'id',
   'provincia',
-  'BibliotecaDisponedealmenosunaSi')
+  'Biblioteca...Dispone.de.al.menos.una....Si')
+
+# ================================================================
+# TOTAL
+# ================================================================
 
 # Crear un nuevo dataframe solo con las columnas relevantes
 características_infraestructura_nacional <- características %>%
-  select(all_of(columnas_biblioteca_laboratorio)) %>%
-  # Calcular los totales usando rowSums para contar las escuelas con biblioteca y laboratorio
+  select(all_of(columnas_biblioteca)) %>%
+  # Calcular los totales usando rowSums para contar las escuelas con biblioteca
   mutate(
-    total_biblioteca = rowSums(select(., 'BibliotecaDisponedealmenosunaSi') == "X", na.rm = TRUE)
+    total_biblioteca = rowSums(select(., 'Biblioteca...Dispone.de.al.menos.una....Si') == "X", na.rm = TRUE)
   ) %>%
   # Calcular las cantidades
   summarise(
@@ -47,10 +51,10 @@ características_infraestructura_nacional <- características %>%
 
 # Crear un nuevo dataframe solo con las columnas relevantes
 características_infraestructura_nacional_extranjeros <- características_con_extranjeros %>%
-  select(all_of(columnas_biblioteca_laboratorio)) %>%
-  # Calcular los totales usando rowSums para contar las escuelas con biblioteca y laboratorio
+  select(all_of(columnas_biblioteca)) %>%
+  # Calcular los totales usando rowSums para contar las escuelas con biblioteca 
   mutate(
-    total_biblioteca = rowSums(select(., 'BibliotecaDisponedealmenosunaSi') == "X", na.rm = TRUE),
+    total_biblioteca = rowSums(select(., 'Biblioteca...Dispone.de.al.menos.una....Si') == "X", na.rm = TRUE),
   ) %>%
   # Calcular las cantidades
   summarise(
@@ -70,10 +74,10 @@ características_infraestructura_nacional_extranjeros <- características_con_ex
 
 # Crear un nuevo dataframe solo con las columnas relevantes
 características_infraestructura_nacional_sin_extranjeros <- características_sin_extranjeros %>%
-  select(all_of(columnas_biblioteca_laboratorio)) %>%
-  # Calcular los totales usando rowSums para contar las escuelas con biblioteca y laboratorio
+  select(all_of(columnas_biblioteca)) %>%
+  # Calcular los totales usando rowSums para contar las escuelas con biblioteca 
   mutate(
-    total_biblioteca = rowSums(select(., 'BibliotecaDisponedealmenosunaSi') == "X", na.rm = TRUE),
+    total_biblioteca = rowSums(select(., 'Biblioteca...Dispone.de.al.menos.una....Si') == "X", na.rm = TRUE),
   ) %>%
   # Calcular las cantidades
   summarise(
@@ -141,7 +145,7 @@ legend("bottomleft", legend = conteo_biblioteca$biblioteca_categoria, fill = col
 
 # Guardar el gráfico como imagen
 png("grafico_torta_disponibilidad_biblioteca.png", width = 500, height = 500)
-pie(conteo_biblioteca_extranjeros$porcentaje,
+pie(conteo_biblioteca$porcentaje,
     labels = paste0(round(conteo_biblioteca$porcentaje, 2), "%"),
     col = colors,
     main = "Distribución de Escuelas \n según Disponibilidad de Biblioteca (2012)",

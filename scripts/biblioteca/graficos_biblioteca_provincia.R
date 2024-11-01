@@ -12,16 +12,22 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
+# Definir las columnas que contienen información sobre biblioteca
+columnas_biblioteca <- c(
+  'id',
+  'provincia',
+  'Biblioteca...Dispone.de.al.menos.una....Si')
+
 # ================================================================
-# PROVINCIAL: TOTAL
+# PROVINCIA: TOTAL
 # ================================================================
 
 # Crear un nuevo dataframe solo con las columnas relevantes
 características_infraestructura_provincial <- características %>%
-  select(all_of(columnas_biblioteca_laboratorio)) %>%
-  # Calcular los totales usando rowSums para contar las escuelas con biblioteca y laboratorio
+  select(all_of(columnas_biblioteca)) %>%
+  # Calcular los totales usando rowSums para contar las escuelas con biblioteca 
   mutate(
-    total_biblioteca = rowSums(select(., 'BibliotecaDisponedealmenosunaSi') == "X", na.rm = TRUE),
+    total_biblioteca = rowSums(select(., 'Biblioteca...Dispone.de.al.menos.una....Si') == "X", na.rm = TRUE),
   ) %>%
   # Agrupar por provincia
   group_by(provincia) %>%
@@ -39,15 +45,15 @@ características_infraestructura_provincial <- características %>%
     )
 
 # ================================================================
-# PROVINCIAL: EXTRANJEROS
+# PROVINCIA: EXTRANJEROS
 # ================================================================
 
 # Crear un nuevo dataframe solo con las columnas relevantes
 características_infraestructura_provincial_extranjeros <- características_con_extranjeros %>%
-  select(all_of(columnas_biblioteca_laboratorio)) %>%
-  # Calcular los totales usando rowSums para contar las escuelas con biblioteca y laboratorio
+  select(all_of(columnas_biblioteca)) %>%
+  # Calcular los totales usando rowSums para contar las escuelas con biblioteca 
   mutate(
-    total_biblioteca = rowSums(select(., 'BibliotecaDisponedealmenosunaSi') == "X", na.rm = TRUE),
+    total_biblioteca = rowSums(select(., 'Biblioteca...Dispone.de.al.menos.una....Si') == "X", na.rm = TRUE),
   ) %>%
   # Agrupar por provincia
   group_by(provincia) %>%
@@ -65,15 +71,15 @@ características_infraestructura_provincial_extranjeros <- características_con_
   )
 
 # ================================================================
-# PROVINCIAL: SIN EXTRANJEROS
+# PROVINCIA: SIN EXTRANJEROS
 # ================================================================
 
 # Crear un nuevo dataframe solo con las columnas relevantes
 características_infraestructura_provincial_sin_extranjeros <- características_sin_extranjeros %>%
-  select(all_of(columnas_biblioteca_laboratorio)) %>%
-  # Calcular los totales usando rowSums para contar las escuelas con biblioteca y laboratorio
+  select(all_of(columnas_biblioteca)) %>%
+  # Calcular los totales usando rowSums para contar las escuelas con biblioteca 
   mutate(
-    total_biblioteca = rowSums(select(., 'BibliotecaDisponedealmenosunaSi') == "X", na.rm = TRUE),
+    total_biblioteca = rowSums(select(., 'Biblioteca...Dispone.de.al.menos.una....Si') == "X", na.rm = TRUE),
   ) %>%
   # Agrupar por provincia
   group_by(provincia) %>%
@@ -89,6 +95,7 @@ características_infraestructura_provincial_sin_extranjeros <- características_
     porcentaje_escuelas_con_biblioteca = round((cantidad_escuelas_con_biblioteca / total_sin_extranjeros) * 100,2),
     porcentaje_escuelas_sin_biblioteca = round((cantidad_escuelas_sin_biblioteca / total_sin_extranjeros) * 100,2)
   )
+
 
 # ================================================================
 # MOSTRAR RESULTADOS 
