@@ -1,5 +1,21 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [La permanencia de la desigualdad. Del derecho al hecho.](#la-permanencia-de-la-desigualdad-del-derecho-al-hecho)
+  - [Descripción del proyecto](#descripción-del-proyecto)
+    - [Análisis realizados](#análisis-realizados)
+      - [Población](#población)
+      - [Matrícula](#matrícula)
+      - [Características](#características)
+    - [Narración gráfica](#narración-gráfica)
+  - [Estructura del repositorio](#estructura-del-repositorio)
+  - [Instrucciones de Uso](#instrucciones-de-uso)
+  - [Funciones y técnicas relevantes](#funciones-y-técnicas-relevantes)
+  - [Trabajo futuro](#trabajo-futuro)
+
+<!-- TOC end -->
+<!-- TOC --><a name="la-permanencia-de-la-desigualdad-del-derecho-al-hecho"></a>
 # La permanencia de la desigualdad. Del derecho al hecho.
-#### Condiciones estructurales de los establecimientos educativos de niños/as y adolescentes migrantes 
+**Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023.**
 
 **Integrantes**
 
@@ -9,22 +25,25 @@
 - Giletta Antonella Giuliana. Estudiante de la Licenciatura en Sociología, Facultad de Ciencias Sociales.
 - Perez Sbarato Rocío. Estudiante de la Licenciatura en Ciencias de la Computación, Facultad de Matemática, Astronomía, Física y Computación.
 
+<!-- TOC --><a name="descripción-del-proyecto"></a>
 ## Descripción del proyecto
 
-Este repositorio consiste en el anexo de código del trabajo "La permanencia de la desigualdad. Del derecho al hecho: Condiciones estructurales de los establecimientos educativos de niños/as y adolescentes migrantes" presentado en el Socio-Hackaton "Investigar en Sociales". Aquí encontrarás el código que usamos para analizar el acceso a derechos y recursos en escuelas primarias y secundarias de Argentina que cuentan con estudiantes extranjeros. 
+Este repositorio consiste en el anexo de código del trabajo "La permanencia de la desigualdad. Del derecho al hecho: Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023" presentado en el Socio-Hackaton "Investigar en Sociales". Aquí encontrarás el código que usamos para analizar el acceso a derechos y recursos en escuelas primarias y secundarias de Argentina que cuentan con estudiantes extranjeros. 
 
 Para llevar a cabo este análisis, usamos datos abiertos proporcionados por la Dirección de Información y Evaluación Educativa del Ministerio de Capital Humano del Gobierno Nacional. En particular, trabajamos con la "Base de Datos por Escuela", que recoge información de las escuelas de todo el país desde el relevamiento anual de educación común. De cada año de la base (2011-2023), tomamos las siguientes bases de datos:
 
+- **Base Usuaria 1**: matrícula escolar.
 - **Base Usuaria 5**: características de los establecimientos educativos.
 - **Base Usuaria 6**: población escolar.
-- **Base Usuaria 7**: matrícula escolar por edad.
 
 En este [documento](https://shimmering-aphid-642.notion.site/Bases-de-datos-11123fc8fd2180e2b5d0fa34473f7067?pvs=4) se encuentra una descripción de los contenidos de estas bases de datos y se señala cuáles utilizamos para el proyecto. 
 
+<!-- TOC --><a name="análisis-realizados"></a>
 ### Análisis realizados
 
 A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realizar los siguientes análisis:
 
+<!-- TOC --><a name="población"></a>
 #### Población
 - **Cantidad de extranjeros por provincia:** Vimos cuántos estudiantes extranjeros hay en cada provincia y específicamente qué nacionalidades de origen tienen.
 - **Cantidad de extranjeros por nacionalidad:** Analizamos cuántos estudiantes hay según su país de origen.
@@ -32,9 +51,11 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 - **Cantidad de escuelas con estudiantes extranjeros según sector:** Revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
 - **División de extranjeros por nivel educativo**: Contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
 
-### Matrícula
+<!-- TOC --><a name="matrícula"></a>
+#### Matrícula
 - **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
 
+<!-- TOC --><a name="características"></a>
 #### Características
 - **Acceso a internet:** Miramos cuántas escuelas extranjeras tienen acceso a internet y si es pago o gratuito.
 - **Acceso a electricidad:** Analizamos cuántas tienen electricidad y si es de la red pública u otra fuente.
@@ -42,6 +63,18 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 
 > Son alrededor de 1000 gráficos.
 
+<!-- TOC --><a name="narración-gráfica"></a>
+### Narración gráfica
+
+Para presentar el análisis de datos mediante una visualización interactiva y amigable utilizamos una librería del lenguaje de programación Python llamada [`streamlit`](https://streamlit.io/). 
+
+- Para acceder al tablero desde el navegador (sin necesidad de instalar Python ni `streamlit`), pueden hacer click en el botón de abajo: 
+  
+  [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sociohackatonapp.streamlit.app/)
+
+- Para acceder al código en Python de nuestro tablero, pueden ir [este](https://github.com/angelescch/SocioHackatonApp/) repositorio de Github. Ahí están las intrucciones sobre cómo ejecutar el tablero de manera local y las dependencias que se deben instalar.
+
+<!-- TOC --><a name="estructura-del-repositorio"></a>
 ## Estructura del repositorio
 
 ```plaintext
@@ -71,6 +104,7 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 
 ```
 
+<!-- TOC --><a name="instrucciones-de-uso"></a>
 ## Instrucciones de Uso
 
 **Clonar el repositorio**
@@ -94,6 +128,7 @@ cd SocioHackaton
 **Documentación**
    - En la carpeta de `docs` se encuentra el trabajo entregado en el SocioHackaton.
   
+<!-- TOC --><a name="funciones-y-técnicas-relevantes"></a>
 ## Funciones y técnicas relevantes
 
 En este proyecto, usamos el lenguaje R, que es muy común para el análisis de datos. Nos familiarizarnos con este y decidimos utilizar las siguientes librerías y funciones para crear nuestros gráficos:
@@ -125,6 +160,7 @@ Recomendamos echarle un vistazo a estas páginas para aprender más sobre estas 
 - [Introducción a dplyr](https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/dplyr.html)
 - [Uniones de datos con dplyr](https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti)
 
+<!-- TOC --><a name="trabajo-futuro"></a>
 ## Trabajo futuro
 
 Si tuvieramos más tiempo y más personas en el equipo, sería interesante realizar los siguientes ajustes:
