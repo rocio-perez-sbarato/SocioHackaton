@@ -17,6 +17,7 @@ Para llevar a cabo este análisis, usamos datos abiertos proporcionados por la D
 
 - **Base Usuaria 5**: características de los establecimientos educativos.
 - **Base Usuaria 6**: población escolar.
+- **Base Usuaria 7**: matrícula escolar por edad.
 
 En este [documento](https://shimmering-aphid-642.notion.site/Bases-de-datos-11123fc8fd2180e2b5d0fa34473f7067?pvs=4) se encuentra una descripción de los contenidos de estas bases de datos y se señala cuáles utilizamos para el proyecto. 
 
@@ -29,13 +30,15 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 - **Cantidad de extranjeros por nacionalidad:** Analizamos cuántos estudiantes hay según su país de origen.
 - **Cantidad de escuelas con estudiantes extranjeros:** Contamos cuántas escuelas tienen estudiantes que vienen de otros países.
 - **Cantidad de escuelas con estudiantes extranjeros según sector:** Revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
-- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas con estudiantes extranjeros proveen servicio de alimentación.
-- **Tipos de alimentos brindados en escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos qué comidas (desayuno, almuerzo, merienda) se ofrecen en las escuelas con estudiantes extranjeros.
+- **División de extranjeros por nivel educativo**: Contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
+
+### Matrícula
+- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
 
 #### Características
 - **Acceso a internet:** Miramos cuántas escuelas extranjeras tienen acceso a internet y si es pago o gratuito.
 - **Acceso a electricidad:** Analizamos cuántas tienen electricidad y si es de la red pública u otra fuente.
-- **Acceso a biblioteca:** Contamos cuántas escuelas extranjeras cuentan con una biblioteca.
+- **Disponibilidad de biblioteca:** Contamos cuántas escuelas extranjeras disponen de una biblioteca.
 
 > Son alrededor de 1000 gráficos.
 
@@ -129,6 +132,7 @@ Si tuvieramos más tiempo y más personas en el equipo, sería interesante reali
 - **Gráficos**
   - Cantidad de escuelas extranjeras en ámbitos urbanos y rurales
   - Cantidad de escuelas extranjeras con acceso a laboratorio
+  - Cantidad de escuelas rurales y urbanas con electricidad
   - Análisis de tendencias año a año para el acceso a derechos y recursos de las escuelas con extranjeros
 - **Unificación de código:** Incorporar una variable `year` en cada archivo de análisis de datos para simplificar el código y hacerlo más eficiente. 
 - **Unificación de entornos de trabajo:** Incorporar un Jupyter Notebook para cada análisis, logrando mayor accesibilidad en el código para personas interesadas pero sin formación técnica.
