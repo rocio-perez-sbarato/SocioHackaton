@@ -32,7 +32,7 @@ Este repositorio consiste en el anexo de código del trabajo "La permanencia de 
 
 Para llevar a cabo este análisis, usamos datos abiertos proporcionados por la Dirección de Información y Evaluación Educativa del Ministerio de Capital Humano del Gobierno Nacional. En particular, trabajamos con la "Base de Datos por Escuela", que recoge información de las escuelas de todo el país desde el relevamiento anual de educación común. De cada año de la base (2011-2023), tomamos las siguientes bases de datos:
 
-- **Base Usuaria 1**: matrícula escolar.
+- **Base Usuaria 2**: matrícula escolar.
 - **Base Usuaria 5**: características de los establecimientos educativos.
 - **Base Usuaria 6**: población escolar.
 
@@ -49,11 +49,11 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 - **Cantidad de extranjeros por nacionalidad:** Analizamos cuántos estudiantes hay según su país de origen.
 - **Cantidad de escuelas con estudiantes extranjeros:** Contamos cuántas escuelas tienen estudiantes que vienen de otros países.
 - **Cantidad de escuelas con estudiantes extranjeros según sector:** Revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
-- **División de extranjeros por nivel educativo**: Contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
+- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
 
 <!-- TOC --><a name="matrícula"></a>
 #### Matrícula
-- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
+- **División de extranjeros por nivel educativo**: Contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
 
 <!-- TOC --><a name="características"></a>
 #### Características
@@ -72,7 +72,7 @@ Para presentar el análisis de datos mediante una visualización interactiva y a
   
   [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sociohackatonapp.streamlit.app/)
 
-- Para acceder al código en Python de nuestro tablero, pueden ir [este](https://github.com/angelescch/SocioHackatonApp/) repositorio de Github. Ahí están las intrucciones sobre cómo ejecutar el tablero de manera local y las dependencias que se deben instalar.
+- Para acceder al código en Python de nuestro tablero, pueden ir [este](https://github.com/angelescch/SocioHackatonApp/) repositorio de Github. Ahí están las instrucciones sobre cómo ejecutar el tablero de manera local y las dependencias que se deben instalar.
 
 <!-- TOC --><a name="estructura-del-repositorio"></a>
 ## Estructura del repositorio
