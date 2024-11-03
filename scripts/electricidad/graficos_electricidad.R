@@ -12,12 +12,6 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-# ---------------------------------------------------------
-# Nota: No hicimos gráficos de estos resultados porque 
-# la gran mayoría de las escuelas tienen electricidad 
-# con red pública.
-# ---------------------------------------------------------
-
 # ================================================================
 # TOTAL
 # ================================================================
@@ -227,6 +221,59 @@ pie(conteo_electricidad_nacional$porcentaje,
     border = colors)
 legend("bottomright", legend = conteo_electricidad_nacional$electricidad_categoria, fill = colors, cex = 0.8)
 dev.off()
+
+######### Para los últimos años donde hay gran porcentaje de red pública
+
+# Datos de escuelas
+cantidad_escuelas_sin_electricidad_nacional <- características_electricidad_nacional_extranjeros$cantidad_escuelas_sin_electricidad
+cantidad_escuelas_con_electricidad_red_publica <- características_electricidad_nacional_extranjeros$cantidad_escuelas_con_electricidad_red_publica
+cantidad_escuelas_con_electricidad_otros <- características_electricidad_nacional_extranjeros$cantidad_escuelas_con_electricidad_otros
+total_escuelas_nacional <- características_electricidad_nacional_extranjeros$cantidad_escuelas_sin_duplicados
+
+# Cálculo de porcentajes con redondeo
+porcentaje_sin_electricidad_nacional <- round((cantidad_escuelas_sin_electricidad_nacional / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_red_publica <- round((cantidad_escuelas_con_electricidad_red_publica / total_escuelas_nacional) * 100, 2)
+porcentaje_con_electricidad_otros <- round((cantidad_escuelas_con_electricidad_otros / total_escuelas_nacional) * 100, 2)
+
+# Crear dataframe
+conteo_electricidad_nacional <- data.frame(
+  electricidad_categoria = c("Otros Tipos de Electricidad", "Sin Electricidad", "Con Red Pública"),
+  cantidad = c(cantidad_escuelas_con_electricidad_otros,
+              cantidad_escuelas_sin_electricidad_nacional,
+               cantidad_escuelas_con_electricidad_red_publica),
+  porcentaje = c(porcentaje_con_electricidad_otros,
+                 porcentaje_sin_electricidad_nacional,
+                 porcentaje_con_electricidad_red_publica)
+)
+
+# Crear el gráfico de torta sin etiquetas internas
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = NA,  # Ocultar etiquetas en el gráfico
+    col = colors,
+    main = "Distribución de Escuelas con Extranjeros \n según Acceso a Electricidad en Argentina (2023)",
+    border = colors)
+
+# Agregar la leyenda con porcentajes y categorías
+legend("bottomleft",
+       legend = paste(conteo_electricidad_nacional$electricidad_categoria,
+                      ":",
+                      round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+       fill = colors, cex = 0.8)
+
+# Guardar el gráfico como imagen
+png("grafico_torta_acceso_electricidad_nacional_extranjeros_2023.png", width = 500, height = 500)
+pie(conteo_electricidad_nacional$porcentaje,
+    labels = NA,  # Ocultar etiquetas en el gráfico
+    col = colors,
+    main = "Distribución de Escuelas con Extranjeros \n según Acceso a Electricidad en Argentina (2023)",
+    border = colors)
+legend("bottomleft",
+       legend = paste(conteo_electricidad_nacional$electricidad_categoria,
+                      ":",
+                      round(conteo_electricidad_nacional$porcentaje, 2), "%"),
+       fill = colors, cex = 0.8)
+dev.off()
+
 
 # ================================ SIN EXTRANJEROS =================================
 

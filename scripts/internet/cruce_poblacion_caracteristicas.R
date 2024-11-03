@@ -18,6 +18,15 @@ caracteristicas <- read.csv("Caracteristicas.csv", sep = ";", fileEncoding = "IS
 escuelas_con_extranjeros <- read.csv("escuelas_con_extranjeros.csv", sep = ",", fileEncoding = "ISO-8859-1") # Usa comas como separador
 escuelas_sin_extranjeros <- read.csv("escuelas_sin_extranjeros.csv", sep = ",", fileEncoding = "ISO-8859-1")  # Usa comas como separador
 
+# Solo por si hace falta
+caracteristicas$provincia <- iconv(caracteristicas$provincia, from = "latin1", to = "UTF-8")
+caracteristicas$provincia <- gsub("Ã³", "ó", caracteristicas$provincia)
+caracteristicas$provincia <- gsub("Ã­", "í", caracteristicas$provincia)
+caracteristicas$provincia <- gsub("Ã©", "é", caracteristicas$provincia)
+caracteristicas$provincia <- gsub("Ãº", "ú", caracteristicas$provincia)
+caracteristicas$provincia <- gsub("Ã±", "ñ", caracteristicas$provincia)
+caracteristicas$provincia <- gsub("Ã¡", "á", caracteristicas$provincia)
+
 # EXTRANJEROS: Filtrar caracteristicas de escuelas con extranjeros
 caracteristicas_con_extranjeros <- caracteristicas %>%
   semi_join(escuelas_con_extranjeros, by = "id")
