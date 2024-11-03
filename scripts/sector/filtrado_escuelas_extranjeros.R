@@ -8,7 +8,16 @@ library(readr)
 # ---------------------------------------------------------
 
 # Cargar la base de datos 
-poblacion <- read.csv("Poblacion.csv", sep = ";", fileEncoding = "UTF-8")
+poblacion <- read.csv("Poblacion.csv", sep = ";", fileEncoding = "ISO-8859-1")
+
+# Solo por si hace falta
+poblacion$provincia <- iconv(poblacion$provincia, from = "latin1", to = "UTF-8")
+poblacion$provincia <- gsub("Ã³", "ó", poblacion$provincia)
+poblacion$provincia <- gsub("Ã­", "í", poblacion$provincia)
+poblacion$provincia <- gsub("Ã©", "é", poblacion$provincia)
+poblacion$provincia <- gsub("Ãº", "ú", poblacion$provincia)
+poblacion$provincia <- gsub("Ã±", "ñ", poblacion$provincia)
+poblacion$provincia <- gsub("Ã¡", "á", poblacion$provincia)
 
 # Definir las columnas que contienen los datos de extranjeros
 columnas_extranjeros <- c(
