@@ -37,7 +37,7 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 - **Acceso a electricidad:** Analizamos cuántas tienen electricidad y si es de la red pública u otra fuente.
 - **Acceso a biblioteca:** Contamos cuántas escuelas extranjeras cuentan con una biblioteca.
 
-> Son alrededor de 600 gráficos.
+> Son alrededor de 1000 gráficos.
 
 ## Estructura del repositorio
 
@@ -86,7 +86,7 @@ cd SocioHackaton
 
 **Ejecutar los Scripts**
    - Cada archivo se corre por separado y genera las tablas y gráficos. Si necesitás ejecutar un archivo que depende de otro, eso estará indicado al principio del archivo. 
-   - Recomendamos usar los Colabs que están en la carpeta de notebooks, donde el flujo del código está armado de forma secuencial.
+     - En esos casos, recomendamos usar los Colabs que están en la carpeta de notebooks, donde el flujo del código está armado de forma secuencial.
 
 **Documentación**
    - En la carpeta de `docs` se encuentra el trabajo entregado en el SocioHackaton.
@@ -130,6 +130,6 @@ Si tuvieramos más tiempo y más personas en el equipo, sería interesante reali
   - Cantidad de escuelas extranjeras en ámbitos urbanos y rurales
   - Cantidad de escuelas extranjeras con acceso a laboratorio
   - Análisis de tendencias año a año para el acceso a derechos y recursos de las escuelas con extranjeros
-- **Unificación de código:** Incorporar un ciclo por años en cada archivo para simplificar el código y hacerlo más eficiente. 
+- **Unificación de código:** Incorporar una variable `year` en cada archivo de análisis de datos para simplificar el código y hacerlo más eficiente. 
 - **Unificación de entornos de trabajo:** Incorporar un Jupyter Notebook para cada análisis, logrando mayor accesibilidad en el código para personas interesadas pero sin formación técnica.
 - **Unificación de orden de barras:** Definir el criterio óptimo para ordenar las barras de los gráficos de barras e incorporar este criterio en los gráficos ya realizados.
