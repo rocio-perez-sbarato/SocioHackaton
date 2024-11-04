@@ -72,7 +72,7 @@ Para presentar el análisis de datos mediante una visualización interactiva y a
   
   [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sociohackatonapp.streamlit.app/)
 
-- Para acceder al código en Python de nuestro tablero, pueden ir [este](https://github.com/angelescch/SocioHackatonApp/) repositorio de Github. Ahí están las intrucciones sobre cómo ejecutar el tablero de manera local y las dependencias que se deben instalar.
+- Para acceder al código en Python de nuestro tablero, podés ir a [este](https://github.com/angelescch/SocioHackatonApp/) repositorio de Github. Ahí están las intrucciones sobre cómo ejecutar el tablero de manera local y las dependencias que se deben instalar.
 
 <!-- TOC --><a name="estructura-del-repositorio"></a>
 ## Estructura del repositorio
