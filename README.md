@@ -28,11 +28,11 @@
 <!-- TOC --><a name="descripción-del-proyecto"></a>
 ## Descripción del proyecto
 
-Este repositorio consiste en el anexo de código del trabajo "La permanencia de la desigualdad. Del derecho al hecho: Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023" presentado en el Socio-Hackaton "Investigar en Sociales". Aquí encontrarás el código que usamos para analizar el acceso a derechos y recursos en escuelas primarias y secundarias de Argentina que cuentan con estudiantes extranjeros. 
+Este repositorio consiste en el anexo de código del trabajo "La permanencia de la desigualdad. Del derecho al hecho: Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023" presentado en el Socio-Hackaton "Investigar en Sociales 2024", en el marco de las II Jornadas Investigar en Sociales de la Facultad de Ciencias Sociales de la Universidad Nacional de Córdoba. Aquí encontrarás el código que usamos para analizar el acceso a derechos y recursos en escuelas primarias y secundarias de Argentina que cuentan con estudiantes extranjeros. 
 
 Para llevar a cabo este análisis, usamos datos abiertos proporcionados por la Dirección de Información y Evaluación Educativa del Ministerio de Capital Humano del Gobierno Nacional. En particular, trabajamos con la "Base de Datos por Escuela", que recoge información de las escuelas de todo el país desde el relevamiento anual de educación común. De cada año de la base (2011-2023), tomamos las siguientes bases de datos:
 
-- **Base Usuaria 1**: matrícula escolar.
+- **Base Usuaria 2**: matrícula escolar.
 - **Base Usuaria 5**: características de los establecimientos educativos.
 - **Base Usuaria 6**: población escolar.
 
@@ -49,11 +49,11 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 - **Cantidad de extranjeros por nacionalidad:** Analizamos cuántos estudiantes hay según su país de origen.
 - **Cantidad de escuelas con estudiantes extranjeros:** Contamos cuántas escuelas tienen estudiantes que vienen de otros países.
 - **Cantidad de escuelas con estudiantes extranjeros según sector:** Revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
-- **División de extranjeros por nivel educativo**: Contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
+- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
 
 <!-- TOC --><a name="matrícula"></a>
 #### Matrícula
-- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
+- **División de extranjeros por nivel educativo**: Contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
 
 <!-- TOC --><a name="características"></a>
 #### Características
