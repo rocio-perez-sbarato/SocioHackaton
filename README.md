@@ -1,6 +1,6 @@
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
-- [La permanencia de la desigualdad. Del derecho al hecho.](#la-permanencia-de-la-desigualdad-del-derecho-al-hecho)
+- [Migrantes en la escuela argentina. Del derecho al hecho.](#migrantes-en-la-escuela-argentina-del-derecho-al-hecho)
   - [Descripción del proyecto](#descripción-del-proyecto)
     - [Análisis realizados](#análisis-realizados)
       - [Población](#población)
@@ -14,7 +14,7 @@
 
 <!-- TOC end -->
 <!-- TOC --><a name="la-permanencia-de-la-desigualdad-del-derecho-al-hecho"></a>
-# La permanencia de la desigualdad. Del derecho al hecho.
+# Migrantes en la escuela argentina. Del derecho al hecho.
 **Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023.**
 
 **Integrantes**
@@ -28,7 +28,7 @@
 <!-- TOC --><a name="descripción-del-proyecto"></a>
 ## Descripción del proyecto
 
-Este repositorio consiste en el anexo de código del trabajo "La permanencia de la desigualdad. Del derecho al hecho: Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023" presentado en el Socio-Hackaton "Investigar en Sociales". Aquí encontrarás el código que usamos para analizar el acceso a derechos y recursos en escuelas primarias y secundarias de Argentina que cuentan con estudiantes extranjeros. 
+Este repositorio consiste en el anexo de código del trabajo "La permanencia de la desigualdad. Del derecho al hecho: Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023" presentado en el Socio-Hackaton "Investigar en Sociales 2024", en el marco de las II Jornadas Investigar en Sociales de la Facultad de Ciencias Sociales de la Universidad Nacional de Córdoba. Aquí encontrarás el código que usamos para analizar el acceso a derechos y recursos en escuelas primarias y secundarias de Argentina que cuentan con estudiantes extranjeros. 
 
 Para llevar a cabo este análisis, usamos datos abiertos proporcionados por la Dirección de Información y Evaluación Educativa del Ministerio de Capital Humano del Gobierno Nacional. En particular, trabajamos con la "Base de Datos por Escuela", que recoge información de las escuelas de todo el país desde el relevamiento anual de educación común. De cada año de la base (2011-2023), tomamos las siguientes bases de datos:
 
@@ -68,11 +68,11 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 
 Para presentar el análisis de datos mediante una visualización interactiva y amigable utilizamos una librería del lenguaje de programación Python llamada [`streamlit`](https://streamlit.io/). 
 
-- Para acceder al tablero desde el navegador (sin necesidad de instalar Python ni `streamlit`), pueden hacer click en el botón de abajo: 
+- Para acceder al tablero desde el navegador (sin necesidad de instalar Python ni `streamlit`), podés hacer click en el botón de abajo: 
   
   [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sociohackatonapp.streamlit.app/)
 
-- Para acceder al código en Python de nuestro tablero, pueden ir [este](https://github.com/angelescch/SocioHackatonApp/) repositorio de Github. Ahí están las instrucciones sobre cómo ejecutar el tablero de manera local y las dependencias que se deben instalar.
+- Para acceder al código en Python de nuestro tablero, pueden ir [este](https://github.com/angelescch/SocioHackatonApp/) repositorio de Github. Ahí están las intrucciones sobre cómo ejecutar el tablero de manera local y las dependencias que se deben instalar.
 
 <!-- TOC --><a name="estructura-del-repositorio"></a>
 ## Estructura del repositorio
@@ -100,7 +100,9 @@ Para presentar el análisis de datos mediante una visualización interactiva y a
 │   ├── ...
 │
 └── docs/                            # Documentación adicional
-    ├── trabajo_final.pdf            # Trabajo
+    ├── Socio hackaton.              # Trabajo
+        Benitez Siciliano, Castillo,
+        Carrara, Giletta y Perez Sbarato.pdf 
 
 ```
 
@@ -123,7 +125,7 @@ cd SocioHackaton
 
 **Ejecutar los Scripts**
    - Cada archivo se corre por separado y genera las tablas y gráficos. Si necesitás ejecutar un archivo que depende de otro, eso estará indicado al principio del archivo. 
-     - En esos casos, recomendamos usar los Colabs que están en la carpeta de notebooks, donde el flujo del código está armado de forma secuencial.
+     - En esos casos, te recomendamos usar los Colabs que están en la carpeta de notebooks, donde el flujo del código está armado de forma secuencial.
 
 **Documentación**
    - En la carpeta de `docs` se encuentra el trabajo entregado en el SocioHackaton.
@@ -168,7 +170,7 @@ Si tuvieramos más tiempo y más personas en el equipo, sería interesante reali
 - **Gráficos**
   - Cantidad de escuelas extranjeras en ámbitos urbanos y rurales
   - Cantidad de escuelas extranjeras con acceso a laboratorio
-  - Cantidad de escuelas rurales y urbanas con electricidad
+  - Cantidad de escuelas rurales y urbanas con electricidad e internet
   - Análisis de tendencias año a año para el acceso a derechos y recursos de las escuelas con extranjeros
 - **Unificación de código:** Incorporar una variable `year` en cada archivo de análisis de datos para simplificar el código y hacerlo más eficiente. 
 - **Unificación de entornos de trabajo:** Incorporar un Jupyter Notebook para cada análisis, logrando mayor accesibilidad en el código para personas interesadas pero sin formación técnica.
