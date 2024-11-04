@@ -168,7 +168,7 @@ Si tuvieramos más tiempo y más personas en el equipo, sería interesante reali
 - **Gráficos**
   - Cantidad de escuelas extranjeras en ámbitos urbanos y rurales
   - Cantidad de escuelas extranjeras con acceso a laboratorio
-  - Cantidad de escuelas rurales y urbanas con electricidad
+  - Cantidad de escuelas rurales y urbanas con electricidad e internet
   - Análisis de tendencias año a año para el acceso a derechos y recursos de las escuelas con extranjeros
 - **Unificación de código:** Incorporar una variable `year` en cada archivo de análisis de datos para simplificar el código y hacerlo más eficiente. 
 - **Unificación de entornos de trabajo:** Incorporar un Jupyter Notebook para cada análisis, logrando mayor accesibilidad en el código para personas interesadas pero sin formación técnica.
