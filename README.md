@@ -1,7 +1,19 @@
+# Migrantes en la escuela argentina. Del derecho al hecho.
+**Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023.**
+
+**Integrantes**
+
+- Benitez Siciliano Paola. Estudiante de la Licenciatura en Sociología, Facultad de Ciencias Sociales.
+- Castillo Paulina, Estudiante de la Licenciatura en Ciencia Política, Facultad de Ciencias Sociales.
+- Carrara María Ángeles. Estudiante de la Licenciatura en Ciencias de la Computación, Facultad de Matemática, Astronomía, Física y Computación.
+- Giletta Antonella Giuliana. Estudiante de la Licenciatura en Sociología, Facultad de Ciencias Sociales.
+- Perez Sbarato Rocío. Estudiante de la Licenciatura en Ciencias de la Computación, Facultad de Matemática, Astronomía, Física y Computación.
+
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
 - [Migrantes en la escuela argentina. Del derecho al hecho.](#migrantes-en-la-escuela-argentina-del-derecho-al-hecho)
   - [Descripción del proyecto](#descripción-del-proyecto)
+    - [Presentación del proyecto](#presentación-del-proyecto)
     - [Análisis realizados](#análisis-realizados)
       - [Población](#población)
       - [Matrícula](#matrícula)
@@ -13,17 +25,6 @@
   - [Trabajo futuro](#trabajo-futuro)
 
 <!-- TOC end -->
-<!-- TOC --><a name="la-permanencia-de-la-desigualdad-del-derecho-al-hecho"></a>
-# Migrantes en la escuela argentina. Del derecho al hecho.
-**Análisis de la distribución de niños/as y adolescentes migrantes en las escuelas argentinas y las condiciones estructurales de los establecimientos educativos, entre 2011 y 2023.**
-
-**Integrantes**
-
-- Benitez Siciliano Paola. Estudiante de la Licenciatura en Sociología, Facultad de Ciencias Sociales.
-- Castillo Paulina, Estudiante de la Licenciatura en Ciencia Política, Facultad de Ciencias Sociales.
-- Carrara María Ángeles. Estudiante de la Licenciatura en Ciencias de la Computación, Facultad de Matemática, Astronomía, Física y Computación.
-- Giletta Antonella Giuliana. Estudiante de la Licenciatura en Sociología, Facultad de Ciencias Sociales.
-- Perez Sbarato Rocío. Estudiante de la Licenciatura en Ciencias de la Computación, Facultad de Matemática, Astronomía, Física y Computación.
 
 <!-- TOC --><a name="descripción-del-proyecto"></a>
 ## Descripción del proyecto
@@ -38,6 +39,10 @@ Para llevar a cabo este análisis, usamos datos abiertos proporcionados por la D
 
 En este [documento](https://shimmering-aphid-642.notion.site/Bases-de-datos-11123fc8fd2180e2b5d0fa34473f7067?pvs=4) se encuentra una descripción de los contenidos de estas bases de datos y se señala cuáles utilizamos para el proyecto. 
 
+### Presentación del proyecto
+
+Recomendamos acceder a la carpeta `docs` y al documento `presentación.pdf` para una vista rápida del proyecto, los análisis y los aprendizajes realizados a lo largo del proyecto.
+
 <!-- TOC --><a name="análisis-realizados"></a>
 ### Análisis realizados
 
@@ -45,21 +50,21 @@ A lo largo de un mes de trabajo y con un equipo de dos personas, logramos realiz
 
 <!-- TOC --><a name="población"></a>
 #### Población
-- **Cantidad de extranjeros por provincia:** Vimos cuántos estudiantes extranjeros hay en cada provincia y específicamente qué nacionalidades de origen tienen.
-- **Cantidad de extranjeros por nacionalidad:** Analizamos cuántos estudiantes hay según su país de origen.
-- **Cantidad de escuelas con estudiantes extranjeros:** Contamos cuántas escuelas tienen estudiantes que vienen de otros países.
-- **Cantidad de escuelas con estudiantes extranjeros según sector:** Revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
-- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** Mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
+- **Cantidad de extranjeros por provincia:** vimos cuántos estudiantes extranjeros hay en cada provincia y específicamente qué nacionalidades de origen tienen.
+- **Cantidad de extranjeros por nacionalidad:** analizamos cuántos estudiantes hay según su país de origen.
+- **Cantidad de escuelas con estudiantes extranjeros:** contamos cuántas escuelas tienen estudiantes que vienen de otros países.
+- **Cantidad de escuelas con estudiantes extranjeros según sector:** revisamos cuántas de estas escuelas son estatales y cuántas son privadas.
+- **Cantidad de escuelas con estudiantes extranjeros con servicio de alimentación:** mostramos cuántas escuelas (primarias y secundarias) con estudiantes extranjeros proveen servicio de alimentación.
 
 <!-- TOC --><a name="matrícula"></a>
 #### Matrícula
-- **División de extranjeros por nivel educativo**: Contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
+- **División de extranjeros por nivel educativo**: contamos cuántos estudiantes de nivel primario y secundario extranjeros hay en las escuelas de Argentina.
 
 <!-- TOC --><a name="características"></a>
 #### Características
-- **Acceso a internet:** Miramos cuántas escuelas extranjeras tienen acceso a internet y si es pago o gratuito.
-- **Acceso a electricidad:** Analizamos cuántas tienen electricidad y si es de la red pública u otra fuente.
-- **Disponibilidad de biblioteca:** Contamos cuántas escuelas extranjeras disponen de una biblioteca.
+- **Acceso a internet:** miramos cuántas escuelas extranjeras tienen acceso a internet y si es pago o gratuito.
+- **Acceso a electricidad:** analizamos cuántas tienen electricidad y si es de la red pública u otra fuente.
+- **Disponibilidad de biblioteca:** contamos cuántas escuelas extranjeras disponen de una biblioteca.
 
 > Son alrededor de 1000 gráficos.
 
@@ -101,9 +106,9 @@ Para presentar el análisis de datos mediante una visualización interactiva y a
 │
 └── docs/                            # Documentación adicional
     ├── Socio hackaton.              # Trabajo
-        Benitez Siciliano, Castillo,
-        Carrara, Giletta y Perez Sbarato.pdf 
-
+    │    Benitez Siciliano, Castillo,
+    │    Carrara, Giletta y Perez Sbarato.pdf 
+    ├── Presentación.pdf             # Powerpoint
 ```
 
 <!-- TOC --><a name="instrucciones-de-uso"></a>
